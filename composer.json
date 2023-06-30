@@ -17,7 +17,6 @@
     "guzzlehttp/guzzle": "^7.5",
     "juststeveking/http-status-code": "^3.0.2",
     "juststeveking/launchpad": "dev-main",
-    "laravel/breeze": "^1.19.2",
     "laravel/framework": "^10.2",
     "laravel/sanctum": "^3.2.1",
     "laravel/tinker": "^2.8.1",
@@ -38,6 +37,7 @@
   "autoload": {
     "psr-4": {
       "App\\": "app/",
+      "Core\\": ".core/",
       "Database\\Factories\\": "database/factories/",
       "Database\\Seeders\\": "database/seeders/"
     }

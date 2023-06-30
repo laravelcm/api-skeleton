@@ -5,19 +5,19 @@ declare(strict_types=1);
 namespace App\Http\Resources\V1;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
+use TiMacDonald\JsonApi\JsonApiResource;
 
 /**
  * @property-read string $name
  * @property-read string $email
  */
-final class UserResource extends JsonResource
+final class UserResource extends JsonApiResource
 {
-    public function toArray(Request $request): array
+    public function toAttributes(Request $request): array
     {
         return [
-            'name' => $this->name,
-            'email' => $this->email,
+            'name' => $this->resource->name,
+            'email' => $this->resource->email,
         ];
     }
 }
