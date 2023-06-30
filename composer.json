@@ -1,19 +1,28 @@
 {
-  "name": "laravel/laravel",
+  "name": "laravelcm/api-skeleton",
   "type": "project",
   "description": "The Laravel Framework.",
-  "keywords": ["framework", "laravel"],
+  "keywords": ["framework", "laravel", "api"],
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Arthur Monney",
+      "email": "monneylobe@gmail.com",
+      "homepage": "https://arthurmonney.me",
+      "role": "Developer"
+    }
+  ],
   "require": {
     "php": "^8.2",
     "guzzlehttp/guzzle": "^7.5",
-    "juststeveking/http-status-code": "^3.0",
+    "juststeveking/http-status-code": "^3.0.2",
+    "juststeveking/launchpad": "dev-main",
     "laravel/breeze": "^1.19.2",
     "laravel/framework": "^10.2",
     "laravel/sanctum": "^3.2.1",
     "laravel/tinker": "^2.8.1",
     "timacdonald/json-api": "v1.0.0-beta.4",
-    "treblle/treblle-laravel": "^2.8"
+    "treblle/treblle-laravel": "^2.8.6"
   },
   "require-dev": {
     "fakerphp/faker": "^1.21.0",
@@ -21,7 +30,7 @@
     "laravel/sail": "^1.21.1",
     "mockery/mockery": "^1.5.1",
     "nunomaduro/collision": "^6.4",
-    "nunomaduro/larastan": "^2.5",
+    "nunomaduro/larastan": "^2.5.1",
     "pestphp/pest": "^1.22.5",
     "pestphp/pest-plugin-laravel": "^1.4",
     "spatie/laravel-ignition": "^2.0"
@@ -56,7 +65,7 @@
       "./vendor/bin/pint"
     ],
     "stan": [
-      "./vendor/bin/phpstan analyse"
+      "./vendor/bin/phpstan analyse --memory-limit=3g"
     ],
     "test": [
       "@php artisan test"
@@ -76,6 +85,6 @@
       "php-http/discovery": true
     }
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true
 }
