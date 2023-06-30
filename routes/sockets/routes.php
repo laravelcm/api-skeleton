@@ -9,4 +9,3 @@ Broadcast::channel(
     'App.Models.User.{id}',
     fn (User $user, int $id) => (int) $user->getKey() === $id
 );
-

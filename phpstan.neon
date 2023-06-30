@@ -5,6 +5,7 @@ includes:
 parameters:
 
     paths:
+        - .core/
         - app/
 
     level: 9
