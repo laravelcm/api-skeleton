@@ -6,7 +6,7 @@ namespace {{ namespace }};
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class {{ class }} extends FormRequest
+final class {{ class }} extends FormRequest
 {
     public function authorize(): bool
     {

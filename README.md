@@ -1,2 +1,1 @@
-# API Boilerplate - Laravel
-
+# Laravel API Skeleton

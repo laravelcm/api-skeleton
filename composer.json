@@ -1,7 +1,7 @@
 {
   "name": "laravelcm/api-skeleton",
   "type": "project",
-  "description": "The Laravel Framework.",
+  "description": "Skeleton for building APIs with Laravel",
   "keywords": ["framework", "laravel", "api"],
   "license": "MIT",
   "authors": [

@@ -7,7 +7,7 @@ namespace {{ namespace }};
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class {{ class }} extends Seeder
+final class {{ class }} extends Seeder
 {
     public function run(): void
     {

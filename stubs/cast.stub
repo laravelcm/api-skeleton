@@ -7,7 +7,7 @@ namespace {{ namespace }};
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
-class {{ class }} implements CastsAttributes
+final class {{ class }} implements CastsAttributes
 {
     /**
      * Cast the given value.
