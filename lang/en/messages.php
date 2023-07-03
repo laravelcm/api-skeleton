@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'service' => [
-        'online' => 'Service Online',
-    ],
+
+    'welcome' => 'Welcome to Laravel API Skeleton',
+
 ];
