@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Skeleton\Commands;
 
 use Symfony\Component\Console\Command\Command;
@@ -7,7 +9,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\Finder;
 
-class Available extends Command
+final class Available extends Command
 {
     protected function configure(): void
     {
