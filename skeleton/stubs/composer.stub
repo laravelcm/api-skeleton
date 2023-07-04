@@ -1,0 +1,44 @@
+{
+  "name": "laravelcm/api-skeleton",
+  "type": "project",
+  "description": "Skeleton for building APIs with Laravel",
+  "keywords": ["framework", "laravel", "api"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Arthur Monney",
+      "email": "monneylobe@gmail.com",
+      "homepage": "https://arthurmonney.me",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "symfony/console": "^6.3",
+    "symfony/filesystem": "^6.3"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^6.3",
+    "phpstan/phpstan": "^1.10",
+    "phpunit/phpunit": "^9.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Skeleton\\": "skeleton/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Skeleton\\Tests\\": "skeleton/tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
