@@ -1,5 +1,5 @@
 {
-  "name": "laravelcm/api-skeleton",
+  "name": "laravelcm/api-skeleton-default",
   "type": "project",
   "description": "Skeleton for building APIs with Laravel",
   "keywords": ["framework", "laravel", "api"],

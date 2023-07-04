@@ -9,6 +9,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
 
 final class UseProject extends Command
 {
@@ -35,7 +36,17 @@ final class UseProject extends Command
 
         $output->write(PHP_EOL.'  <fg=white>Coping files & folders!</>'.PHP_EOL.PHP_EOL);
 
+        $finder = new Finder();
+        $files = $finder->in($project)
+            ->files()
+            ->depth(0)
+            ->getIterator();
+
         (new Filesystem)->mirror($project, getcwd());
+
+        foreach ($files as $file) {
+            (new Filesystem)->copy($file->getRealPath(), $file->getRelativePathname(), true);
+        }
 
         $output->write(PHP_EOL.'  <fg=green>Project ready! 🚀</>'.PHP_EOL.PHP_EOL);
 
