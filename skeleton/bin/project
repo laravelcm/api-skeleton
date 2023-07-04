@@ -6,8 +6,9 @@ declare(strict_types=1);
 require __DIR__.'/../../vendor/autoload.php';
 
 $app = new Symfony\Component\Console\Application('Laravel API Skeleton', '1.0.0');
-$app->add(new Skeleton\Commands\GenerateProject);
-$app->add(new Skeleton\Commands\UseProject);
 $app->add(new Skeleton\Commands\Available);
+$app->add(new Skeleton\Commands\GenerateProject);
+$app->add(new Skeleton\Commands\Reset);
+$app->add(new Skeleton\Commands\UseProject);
 
 $app->run();

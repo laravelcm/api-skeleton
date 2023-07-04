@@ -2,7 +2,6 @@
 
 namespace Skeleton\Commands;
 
-use Illuminate\Support\Facades\Artisan;
 use RuntimeException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -42,7 +41,7 @@ final class GenerateProject extends Command
             $this->verifyProjectDoesntExist($project);
         }
 
-        if ($input->getOption('force')) {
+        if (file_exists('app') && $input->getOption('force')) {
             (new Filesystem)->remove($project);
         }
 
