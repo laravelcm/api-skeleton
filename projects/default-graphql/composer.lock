@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "803870ebc46a99f89fb0c11dbec869c0",
+    "content-hash": "62ad7fa85e6bf917e551a4abc8ca6fa7",
     "packages": [
         {
             "name": "brick/math",
@@ -6543,6 +6543,70 @@
                 "source": "https://github.com/timacdonald/json-api/releases/latest"
             },
             "time": "2023-02-20T08:18:59+00:00"
+        },
+        {
+            "name": "treblle/security-headers",
+            "version": "0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Treblle/security-headers.git",
+                "reference": "f03729aa31e9f86eb28f839946df2b4e319a0c02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Treblle/security-headers/zipball/f03729aa31e9f86eb28f839946df2b4e319a0c02",
+                "reference": "f03729aa31e9f86eb28f839946df2b4e319a0c02",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.10",
+                "orchestra/testbench": "^8.5.2",
+                "pestphp/pest": "^2.6.1",
+                "phpstan/phpstan": "^1.10.15"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Treblle\\SecurityHeaders\\Providers\\PackageServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Treblle\\SecurityHeaders\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve McDougall",
+                    "email": "juststevemcd@gmail.com",
+                    "homepage": "https://www.juststeveking.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A collection of HTTP middleware classes to improve the security headers in your Laravel application.",
+            "homepage": "https://www.treblle.com/",
+            "keywords": [
+                "api",
+                "debuging",
+                "documentation",
+                "laravel",
+                "monitoring",
+                "treblle"
+            ],
+            "support": {
+                "issues": "https://github.com/Treblle/security-headers/issues",
+                "source": "https://github.com/Treblle/security-headers/tree/0.0.3"
+            },
+            "time": "2023-06-05T09:40:40+00:00"
         },
         {
             "name": "treblle/treblle-api-tools-laravel",
