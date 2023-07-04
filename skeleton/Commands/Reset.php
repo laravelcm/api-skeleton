@@ -46,7 +46,6 @@ final class Reset extends Command
             (new Filesystem)->remove($file->getRelativePathname());
         }
 
-        (new Filesystem)->copy('skeleton/stubs/.gitignore', '.gitignore', true);
         (new Filesystem)->copy('skeleton/stubs/composer.stub', 'composer.json', true);
         (new Filesystem)->copy('skeleton/stubs/phpunit.stub', 'phpunit.xml', true);
         (new Filesystem)->copy('skeleton/stubs/README.stub', 'README.md', true);

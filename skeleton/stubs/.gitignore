@@ -1,8 +1,0 @@
-/vendor
-/.fleet
-/.idea
-/.vscode
-.env.example
-composer.lock
-phpunit.xml
-.phpunit.result.cache
