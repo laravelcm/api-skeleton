@@ -11,6 +11,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
 
 final class GenerateProject extends Command
 {
@@ -49,20 +50,12 @@ final class GenerateProject extends Command
 
         $output->write(PHP_EOL.'  <fg=green>Generating project...</>'.PHP_EOL.PHP_EOL);
 
-        $folders = [
-            "core",
-            "app",
-            "bootstrap",
-            "config",
-            "database",
-            "lang",
-            "public",
-            "resources",
-            "routes",
-            "storage",
-            "stubs",
-            "tests",
-        ];
+        $finder = new Finder();
+        $folders = $finder->in(getcwd())
+            ->directories()
+            ->exclude(['skeleton', 'vendor', 'node_modules', 'projects'])
+            ->depth(0)
+            ->getIterator();
 
         $files = [
             ".editorconfig",
@@ -82,7 +75,11 @@ final class GenerateProject extends Command
         $output->write(PHP_EOL.'  <fg=white>Copying Laravel folders...</>'.PHP_EOL.PHP_EOL);
 
         foreach ($folders as $folder) {
-            (new Filesystem)->mirror(__DIR__.'/../../'.$folder, $project.'/'.$folder, null, ['override' => true]);
+            (new Filesystem)->mirror(
+                originDir: $folder->getRelativePathname(),
+                targetDir: $project.'/'.$folder->getRelativePathname(),
+                options: ['override' => true]
+            );
         }
 
         $output->write(PHP_EOL.'  <fg=white>Copying Laravel files...</>'.PHP_EOL.PHP_EOL);
