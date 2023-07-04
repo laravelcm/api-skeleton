@@ -22,7 +22,8 @@
     "laravel/tinker": "^2.8.1",
     "mll-lab/laravel-graphiql": "^3.0",
     "nuwave/lighthouse": "^6.12",
-    "timacdonald/json-api": "v1.0.0-beta.4"
+    "timacdonald/json-api": "v1.0.0-beta.4",
+    "treblle/security-headers": "^0.0.3"
   },
   "require-dev": {
     "fakerphp/faker": "^1.21.0",

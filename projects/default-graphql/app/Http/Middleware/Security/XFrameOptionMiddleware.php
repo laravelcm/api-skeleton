@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\Security;
 
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-final class JsonApiResponseMiddleware
+final class XFrameOptionMiddleware
 {
     public function handle(Request $request, Closure $next): Response
     {
@@ -17,10 +17,9 @@ final class JsonApiResponseMiddleware
          */
         $response = $next($request);
 
-        $response->headers->set(
-            key: 'Content-Type',
-            values: 'application/vnd.api+json',
-        );
+        $response->headers->add([
+            'X-Frame-Options' => 'deny',
+        ]);
 
         return $response;
     }

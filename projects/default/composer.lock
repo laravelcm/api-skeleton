@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d38c5555ac5c5341dcc9e357be4277e",
+    "content-hash": "4473fe2b21930ed3ada0aa3450eacc5e",
     "packages": [
         {
             "name": "brick/math",
@@ -2162,16 +2162,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.67.0",
+            "version": "2.68.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "c1001b3bc75039b07f38a79db5237c4c529e04c8"
+                "reference": "4f991ed2a403c85efbc4f23eb4030063fdbe01da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/c1001b3bc75039b07f38a79db5237c4c529e04c8",
-                "reference": "c1001b3bc75039b07f38a79db5237c4c529e04c8",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4f991ed2a403c85efbc4f23eb4030063fdbe01da",
+                "reference": "4f991ed2a403c85efbc4f23eb4030063fdbe01da",
                 "shasum": ""
             },
             "require": {
@@ -2260,7 +2260,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-25T22:09:47+00:00"
+            "time": "2023-06-20T18:29:04+00:00"
         },
         {
             "name": "nette/schema",
@@ -6249,6 +6249,70 @@
             "time": "2023-02-20T08:18:59+00:00"
         },
         {
+            "name": "treblle/security-headers",
+            "version": "0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Treblle/security-headers.git",
+                "reference": "f03729aa31e9f86eb28f839946df2b4e319a0c02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Treblle/security-headers/zipball/f03729aa31e9f86eb28f839946df2b4e319a0c02",
+                "reference": "f03729aa31e9f86eb28f839946df2b4e319a0c02",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.10",
+                "orchestra/testbench": "^8.5.2",
+                "pestphp/pest": "^2.6.1",
+                "phpstan/phpstan": "^1.10.15"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Treblle\\SecurityHeaders\\Providers\\PackageServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Treblle\\SecurityHeaders\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve McDougall",
+                    "email": "juststevemcd@gmail.com",
+                    "homepage": "https://www.juststeveking.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A collection of HTTP middleware classes to improve the security headers in your Laravel application.",
+            "homepage": "https://www.treblle.com/",
+            "keywords": [
+                "api",
+                "debuging",
+                "documentation",
+                "laravel",
+                "monitoring",
+                "treblle"
+            ],
+            "support": {
+                "issues": "https://github.com/Treblle/security-headers/issues",
+                "source": "https://github.com/Treblle/security-headers/tree/0.0.3"
+            },
+            "time": "2023-06-05T09:40:40+00:00"
+        },
+        {
             "name": "treblle/treblle-api-tools-laravel",
             "version": "0.0.1",
             "source": {
@@ -6315,128 +6379,6 @@
                 "source": "https://github.com/Treblle/treblle-api-tools-laravel/tree/0.0.1"
             },
             "time": "2023-03-27T10:11:55+00:00"
-        },
-        {
-            "name": "treblle/treblle-laravel",
-            "version": "2.8.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Treblle/treblle-laravel.git",
-                "reference": "9928f5e0ef8401c1172cbf51c2fd8a3499a29e54"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Treblle/treblle-laravel/zipball/9928f5e0ef8401c1172cbf51c2fd8a3499a29e54",
-                "reference": "9928f5e0ef8401c1172cbf51c2fd8a3499a29e54",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "^8.1",
-                "treblle/treblle-sdk-core": "^0.0.2"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.15.1",
-                "guzzlehttp/guzzle": "^7.5",
-                "laravel/octane": "^1.5",
-                "laravel/pint": "^1.6",
-                "orchestra/testbench": "^7.0 || ^8.0.8",
-                "phpstan/phpstan": "^1.10"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Treblle\\TreblleServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Treblle\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vedran Cindrić",
-                    "email": "vedran@treblle.com",
-                    "homepage": "https://treblle.com/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Steve McDougall",
-                    "email": "juststevemcd@gmail.com",
-                    "homepage": "https://treblle.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Stay in tune with your APIs",
-            "homepage": "https://treblle.com/",
-            "keywords": [
-                "api",
-                "debuging",
-                "documentation",
-                "laravel",
-                "monitoring",
-                "treblle"
-            ],
-            "support": {
-                "issues": "https://github.com/Treblle/treblle-laravel/issues",
-                "source": "https://github.com/Treblle/treblle-laravel/tree/2.8.8"
-            },
-            "time": "2023-05-02T10:55:12+00:00"
-        },
-        {
-            "name": "treblle/treblle-sdk-core",
-            "version": "0.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Treblle/treblle-sdk-core.git",
-                "reference": "8f47d59dc3d40e3ef4251cb51786af0f2f989434"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Treblle/treblle-sdk-core/zipball/8f47d59dc3d40e3ef4251cb51786af0f2f989434",
-                "reference": "8f47d59dc3d40e3ef4251cb51786af0f2f989434",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.1",
-                "thecodingmachine/safe": "^2.4"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.6",
-                "pestphp/pest": "^1.22.4",
-                "phpstan/phpstan": "^1.10.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Treblle\\Core\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steve McDougall",
-                    "email": "juststevemcd@gmail.com",
-                    "homepage": "https://www.juststeveking.uk/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "The core PHP SDK classes used by the Treblle SDKs.",
-            "support": {
-                "issues": "https://github.com/Treblle/treblle-sdk-core/issues",
-                "source": "https://github.com/Treblle/treblle-sdk-core/tree/0.0.2"
-            },
-            "time": "2023-03-10T11:12:00+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -7798,16 +7740,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.21",
+            "version": "1.10.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "b2a30186be2e4d97dce754ae4e65eb0ec2f04eb5"
+                "reference": "97d694dfd4ceb57bcce4e3b38548f13ea62e4287"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b2a30186be2e4d97dce754ae4e65eb0ec2f04eb5",
-                "reference": "b2a30186be2e4d97dce754ae4e65eb0ec2f04eb5",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/97d694dfd4ceb57bcce4e3b38548f13ea62e4287",
+                "reference": "97d694dfd4ceb57bcce4e3b38548f13ea62e4287",
                 "shasum": ""
             },
             "require": {
@@ -7856,7 +7798,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-06-21T20:07:58+00:00"
+            "time": "2023-06-30T20:04:11+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",

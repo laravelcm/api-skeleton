@@ -6,8 +6,9 @@ namespace Core\Http;
 
 use App\Http\Middleware\CacheHeaders;
 use App\Http\Middleware\EnsureEmailIsVerified;
-use App\Http\Middleware\JsonApiResponseMiddleware;
+use App\Http\Middleware\ContentTypeMiddleware;
 use App\Http\Middleware\PreventRequestsDuringMaintenance;
+use App\Http\Middleware\Security\XFrameOptionMiddleware;
 use App\Http\Middleware\TrimStrings;
 use App\Http\Middleware\TrustProxies;
 use App\Http\Middleware\ValidateSignature;
@@ -20,6 +21,12 @@ use Illuminate\Foundation\Http\Middleware\ValidatePostSize;
 use Illuminate\Http\Middleware\HandleCors;
 use Illuminate\Http\Middleware\SetCacheHeaders;
 use Illuminate\Routing\Middleware\ThrottleRequests;
+use Treblle\SecurityHeaders\Http\Middleware\CertificateTransparencyPolicy;
+use Treblle\SecurityHeaders\Http\Middleware\ContentTypeOptions;
+use Treblle\SecurityHeaders\Http\Middleware\PermissionsPolicy;
+use Treblle\SecurityHeaders\Http\Middleware\RemoveHeaders;
+use Treblle\SecurityHeaders\Http\Middleware\SetReferrerPolicy;
+use Treblle\SecurityHeaders\Http\Middleware\StrictTransportSecurity;
 
 final class Kernel extends HttpKernel
 {
@@ -37,8 +44,15 @@ final class Kernel extends HttpKernel
 
         'api' => [
             ThrottleRequests::class.':api',
-            JsonApiResponseMiddleware::class,
+            ContentTypeMiddleware::class,
             CacheHeaders::class,
+            RemoveHeaders::class,
+            StrictTransportSecurity::class,
+            SetReferrerPolicy::class,
+            PermissionsPolicy::class,
+            ContentTypeOptions::class,
+            CertificateTransparencyPolicy::class,
+            XFrameOptionMiddleware::class,
         ],
     ];
 
