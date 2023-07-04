@@ -6,7 +6,7 @@ namespace Core\Http;
 
 use App\Http\Middleware\CacheHeaders;
 use App\Http\Middleware\EnsureEmailIsVerified;
-use App\Http\Middleware\JsonApiResponseMiddleware;
+use App\Http\Middleware\ContentTypeMiddleware;
 use App\Http\Middleware\PreventRequestsDuringMaintenance;
 use App\Http\Middleware\TrimStrings;
 use App\Http\Middleware\TrustProxies;
@@ -37,7 +37,7 @@ final class Kernel extends HttpKernel
 
         'api' => [
             ThrottleRequests::class.':api',
-            JsonApiResponseMiddleware::class,
+            ContentTypeMiddleware::class,
             CacheHeaders::class,
         ],
     ];
