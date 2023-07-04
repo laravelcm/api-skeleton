@@ -49,7 +49,7 @@ final class GenerateProject extends Command
         $output->write(PHP_EOL.'  <fg=green>Generating project...</>'.PHP_EOL.PHP_EOL);
 
         $folders = [
-            ".core",
+            "core",
             "app",
             "bootstrap",
             "config",
@@ -59,6 +59,7 @@ final class GenerateProject extends Command
             "resources",
             "routes",
             "storage",
+            "stubs",
             "tests",
         ];
 
@@ -92,7 +93,7 @@ final class GenerateProject extends Command
 
         $output->writeln('  <bg=blue;fg=white> INFO 🚀 </> Skeleton API is ready! <options=bold>Build amazing Laravel API.</>'.PHP_EOL);
 
-        return 1;
+        return Command::SUCCESS;
     }
 
     protected function verifyProjectDoesntExist($project): void
@@ -100,13 +101,5 @@ final class GenerateProject extends Command
         if ((is_dir($project) || is_file($project)) && $project != getcwd().$project) {
             throw new RuntimeException('Project already exists!');
         }
-    }
-
-    protected function replaceInFile(string $search, string $replace, string $file): void
-    {
-        file_put_contents(
-            $file,
-            str_replace($search, $replace, file_get_contents($file))
-        );
     }
 }
