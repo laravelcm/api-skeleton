@@ -48,6 +48,25 @@ and you'll need to do another compose install to install the Laravel project's d
 ./skeleton/bin/project use {skeleton-name}
 ```
 
+## Autoload 
+When you use a skeleton, it will overwrite the default root composer.json file and the commands for generating the project will no longer be available. To fix this, you need to autoload the skeleton folder using psr-4. Like this:
+
+```json
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/",
+            "Skeleton\\": "skeleton/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    }
+}
+```
+
+**Tip: don't forget to run composer dump-autoload afterward.**
+
 Once you have built your skeleton and are satisfied with your work, you can generate a project and all the modifications you have made will be added only to the skeleton you have created.
 
 ```bash
