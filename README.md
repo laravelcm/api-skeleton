@@ -1,84 +1,8 @@
-# Laravel 10 API Skeleton 📦
-This project is a skeleton for setting up an API with Laravel. It contains several ways and architectures to build an API with Laravel.
+# Laravel API Skeleton - Example
+This project is a skeleton for building an API with Laravel. It is the simplest skeleton and contains only the basic packages to build an API.
 
-## Introduction 📖
-As each API project is different, it's not easy to have a boilerplate that will cover all cases. Some APIs may need roles, others may not.
-Some may need to set up authentication with [Sanctum](https://laravel.com/docs/10.x/sanctum), others with [JWT](https://github.com/tymondesigns/jwt-auth), others with [Passport](https://laravel.com/docs/10.x/passport) and so on.
-
-All these cases are huge and complex. This project aims to build several skeletons that can be used when the need arises.
-And you'll end up building the architecture you want for your next API project.
-
-You can see here an example of a model like Vercel with [Nextjs](https://github.com/vercel/next.js), which has several sample implementations.
-
-## Getting Started 🚀
-If you want to contribute to the Laravel API Skeleton repo:
-
-- Fork this repository to your GitHub account. Then clone your forked repository and cd into it.
-- Clone the repository
-    ```bash
-    git clone https://github.com/{username}/api-skeleton.git api-skeleton && cd api-skeleton
-    ```
-- In your fork, create a branch for your skeleton, e.g. `feature/authentication-with-passport`.
-
-Then, install the dependencies `composer install`
-
-## Architecture 🏗
-The project has only 2 folders
-- `projets` the folder where all API skeletons will be stored to start an API project with Laravel
-- `skeleton` is the folder containing the commands to generate a skeleton once you've finished building it.
-
-## Available Skeletons 📚
-To get the list of available skeletons, run the command:
+## Installation
 
 ```bash
-./skeleton/bin/project available
+composer require laravelcm/api-skeleton
 ```
-
-All skeletons are available in the `projects` folder. Each skeleton is a Laravel project and containing a `composer.json` file and a `README.md` file.
-
-
-## Usage 📝
-To create a new skeleton, run the following command:
-
-> To build a skeleton, you have to base it on an existing skeleton. The `default` skeleton is the simplest.
-Once you've selected a skeleton, all the code in the skeleton's folder `projects/default` will be available at the root of the project,
-and you'll need to do another compose install to install the Laravel project's dependencies.
-
-```bash
-./skeleton/bin/project use {skeleton-name}
-```
-
-## Autoload 
-When you use a skeleton, it will overwrite the default root composer.json file and the commands for generating the project will no longer be available. To fix this, you need to autoload the skeleton folder using psr-4. Like this:
-
-```json
-{
-    "autoload": {
-        "psr-4": {
-            "App\\": "app/",
-            "Core\\": "core/",
-            "Skeleton\\": "skeleton/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
-        }
-    }
-}
-```
-
-**Tip: don't forget to run composer dump-autoload afterward.**
-
-Once you have built your skeleton and are satisfied with your work, you can generate a project and all the modifications you have made will be added only to the skeleton you have created.
-
-```bash
-./skeleton/bin/project generate {skeleton-name}
-```
-
-This command will create a new Laravel project in the `projects` folder with the name of your skeleton. And you can publish it on packagist composer or if you like.
-Before pushing your branch and making a PR, you need to run the following command to reset the project to its original state.
-
-```bash
-./skeleton/bin/project reset
-```
-
-## Contributing 🤝
-Feel free to create any pull requests for the project. If you have any questions, please you can create an issue.

@@ -1,5 +1,5 @@
 {
-  "name": "laravelcm/api-skeleton",
+  "name": "laravelcm/api-skeleton-default",
   "type": "project",
   "description": "Skeleton for building APIs with Laravel",
   "keywords": ["framework", "laravel", "api"],
@@ -13,31 +13,79 @@
     }
   ],
   "require": {
-    "symfony/console": "^6.3",
-    "symfony/filesystem": "^6.3",
-    "symfony/finder": "^6.3"
+    "php": "^8.2",
+    "guzzlehttp/guzzle": "^7.5",
+    "juststeveking/http-status-code": "^3.0.2",
+    "juststeveking/launchpad": "dev-main",
+    "laravel/framework": "^10.2",
+    "laravel/sanctum": "^3.2.1",
+    "laravel/tinker": "^2.8.1",
+    "timacdonald/json-api": "v1.0.0-beta.4",
+    "treblle/security-headers": "^0.0.3"
   },
   "require-dev": {
-    "phpstan/phpstan": "^1.10",
-    "phpunit/phpunit": "^9.6"
+    "fakerphp/faker": "^1.21.0",
+    "laravel/pint": "^1.6",
+    "laravel/sail": "^1.21.1",
+    "mockery/mockery": "^1.5.1",
+    "nunomaduro/collision": "^6.4",
+    "nunomaduro/larastan": "^2.5.1",
+    "pestphp/pest": "^1.22.5",
+    "pestphp/pest-plugin-laravel": "^1.4",
+    "spatie/laravel-ignition": "^2.0",
+    "symfony/console": "^6.3",
+    "symfony/filesystem": "^6.3"
   },
   "autoload": {
     "psr-4": {
-      "Skeleton\\": "skeleton/"
+      "App\\": "app/",
+      "Core\\": "core/",
+      "Database\\Factories\\": "database/factories/",
+      "Database\\Seeders\\": "database/seeders/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Skeleton\\Tests\\": "skeleton/tests/"
+      "Tests\\": "tests/"
     }
   },
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover --ansi"
+    ],
+    "post-update-cmd": [
+      "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+    ],
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php artisan key:generate --ansi"
+    ],
+    "pint": [
+      "./vendor/bin/pint"
+    ],
+    "stan": [
+      "./vendor/bin/phpstan analyse --memory-limit=3g"
+    ],
+    "test": [
+      "@php artisan test"
+    ]
+  },
   "extra": {
-    "branch-alias": {
-      "dev-master": "1.x-dev"
+    "laravel": {
+      "dont-discover": []
     }
   },
   "config": {
-    "sort-packages": true
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "php-http/discovery": true
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true
