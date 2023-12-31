@@ -50,7 +50,7 @@ class AuthController extends Controller
         ], Response::HTTP_ACCEPTED);
     }
 
-    public function logoutt(): JsonResponse
+    public function logout(): JsonResponse
     {
         Auth::user()->tokens->each(function ($token, $key) {
             $token->delete();
